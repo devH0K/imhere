@@ -3,7 +3,7 @@
 Amarela = Alertas / recomendação, não quebram a aplicação.
 Vermelha = Erro que quebra a aplicação.
 
-- Entendendo Componetização
+- Entendendo Componentização
 
     Benefícios
         Reutilização de código
