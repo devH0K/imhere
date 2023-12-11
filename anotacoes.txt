@@ -1,4 +1,17 @@
-Entendendo a LogBox
+- Entendendo a LogBox
 
 Amarela = Alertas / recomendação, não quebram a aplicação.
 Vermelha = Erro que quebra a aplicação.
+
+- Entendendo Componetização
+
+    Benefícios
+        Reutilização de código
+        Produtividade
+        Isolamento de contexto
+        Legibilidade do código
+        Redução da complexidade
+        Arquivos menores
+        Padronização de projeto
+
+- 
