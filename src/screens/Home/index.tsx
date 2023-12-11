@@ -22,16 +22,19 @@ export default function Home(){
 
       <Text style={styles.eventDate}>
         Domingo, 10 de Dezembro de 2023</Text>
+        
+        <View style={styles.form}>
+            <TextInput
+                style={styles.input}
+                placeholder='Nome do participante'
+                placeholderTextColor="#6B6B6B"
+            />
 
-    <TextInput
-        style={styles.input}
-        placeholder='Nome do participante'
-        placeholderTextColor="#6B6B6B"
-    />
+            <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
+                <Text style={styles.buttonText}>+</Text>
+            </TouchableOpacity>
+        </View>
 
-    <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
-        <Text style={styles.buttonText}>+</Text>
-    </TouchableOpacity>
     </View>
   )
 }
