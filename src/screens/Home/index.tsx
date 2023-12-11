@@ -10,11 +10,11 @@ export default function Home(){
   // componente / interface são iguais
   // no return, sao inseridos os elementos que vao ser exibidos em tela
   // os componentes em JSX sempre iniciam com primeira letra maiuscula e extensao precisa ser formato .tsx
-  
+
   function handleParticipantAdd(){
     console.log("Você clicou no botão adicionar!")
   }
-  
+
   return(
     // obs: um componente não pode retornar mais de um elemento
     <View style={styles.container}>
@@ -24,7 +24,7 @@ export default function Home(){
 
       <Text style={styles.eventDate}>
         Domingo, 10 de Dezembro de 2023</Text>
-        
+
         <View style={styles.form}>
             <TextInput
                 style={styles.input}
@@ -37,9 +37,9 @@ export default function Home(){
             </TouchableOpacity>
         </View>
 
-        <Participant></Participant>
-        <Participant></Participant>
-        <Participant></Participant>
+        <Participant name="Leonardo"></Participant>
+        <Participant name="Caroline"></Participant>
+        <Participant name="Hórus"></Participant>
 
     </View>
   )
