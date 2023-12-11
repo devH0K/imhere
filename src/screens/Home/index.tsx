@@ -2,6 +2,8 @@
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from './styles'
 
+import { Participant } from '../../components/Participant';
+
 // funcao padrao de criacao
 // ao ser inicializada a aplicao, esta funcao é a primeira a ser chamada
 export default function Home(){
@@ -34,6 +36,10 @@ export default function Home(){
                 <Text style={styles.buttonText}>+</Text>
             </TouchableOpacity>
         </View>
+
+        <Participant></Participant>
+        <Participant></Participant>
+        <Participant></Participant>
 
     </View>
   )
