@@ -1,5 +1,5 @@
 // importacao de elementos
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { styles } from './styles'
 
 import { Participant } from '../../components/Participant';
@@ -7,6 +7,9 @@ import { Participant } from '../../components/Participant';
 // funcao padrao de criacao
 // ao ser inicializada a aplicao, esta funcao é a primeira a ser chamada
 export default function Home(){
+
+  const participants = ['Leonardo', 'Caroline', 'Hórus', 'Vicente', 'Odila','Teste 1','Teste 2','Teste 4','Teste 5','Teste 6'];
+
   // componente / interface são iguais
   // no return, sao inseridos os elementos que vao ser exibidos em tela
   // os componentes em JSX sempre iniciam com primeira letra maiuscula e extensao precisa ser formato .tsx
@@ -43,7 +46,17 @@ export default function Home(){
             </TouchableOpacity>
         </View>
 
-        <Participant name="Leonardo" onRemove={() => handleParticipantRemove("Leonardo")}></Participant>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {
+          participants.map(participant => (
+            <Participant
+              key={participant}
+              name={participant}
+              onRemove={() => handleParticipantRemove("Leonardo")}>
+            </Participant>
+          ))
+        }
+      </ScrollView>
 
     </View>
   )
