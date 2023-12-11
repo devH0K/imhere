@@ -1,5 +1,5 @@
 // importacao de elementos
-import { Text, View } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
 import { styles } from './styles'
 
 // funcao padrao de criacao
@@ -15,6 +15,11 @@ export default function Home(){
         Nome do Evento</Text>
       <Text style={styles.eventDate}>
         Domingo, 10 de Dezembro de 2023</Text>
+    <TextInput
+        style={styles.input}
+        placeholder='Nome do participante'
+        placeholderTextColor="#6B6B6B"
+    />
     </View>
   )
 }
