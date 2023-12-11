@@ -9,9 +9,23 @@ export default function App(){
   // os componentes em JSX sempre iniciam com primeira letra maiuscula e extensao precisa ser formato .tsx
   return(
     // obs: um componente não pode retornar mais de um elemento
-    <View>
-      <Text>Leonardo</Text>
-      <Text>Pegoretti</Text>
+    <View style={{
+      flex: 1,
+      backgroundColor: '#131016',
+      padding: 24
+    }}>
+      <Text style={{
+        color: '#FDFCFE',
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginTop: 48
+      }}>
+        Nome do Evento</Text>
+      <Text style={{
+        color: '#6B6B6B',
+        fontSize: 16,
+      }}>
+        Domingo, 10 de Dezembro de 2023</Text>
     </View>
   )
 }
