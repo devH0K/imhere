@@ -11,8 +11,14 @@ export default function Home(){
   // no return, sao inseridos os elementos que vao ser exibidos em tela
   // os componentes em JSX sempre iniciam com primeira letra maiuscula e extensao precisa ser formato .tsx
 
+  // funcao para adicionar participantes
   function handleParticipantAdd(){
-    console.log("Você clicou no botão adicionar!")
+    console.log("Você adicionou um participante!");
+  }
+
+  // funcao para remover participante
+  function handleParticipantRemove(name: string ){
+    console.log(`Você removeu o participante ${name}!`);
   }
 
   return(
@@ -37,9 +43,7 @@ export default function Home(){
             </TouchableOpacity>
         </View>
 
-        <Participant name="Leonardo"></Participant>
-        <Participant name="Caroline"></Participant>
-        <Participant name="Hórus"></Participant>
+        <Participant name="Leonardo" onRemove={() => handleParticipantRemove("Leonardo")}></Participant>
 
     </View>
   )
