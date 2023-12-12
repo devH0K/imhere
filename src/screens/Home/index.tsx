@@ -1,6 +1,7 @@
 // importacao de elementos
 import { Text, View, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { styles } from './styles'
+import React, { useState } from 'react';
 
 import { Participant } from '../../components/Participant';
 
@@ -8,7 +9,7 @@ import { Participant } from '../../components/Participant';
 // ao ser inicializada a aplicao, esta funcao é a primeira a ser chamada
 export default function Home(){
 
-  const participants = ['Leonardo', 'Caroline', 'Hórus', 'Vicente', 'Odila','Teste 1','Teste 2','Teste 4','Teste 5','Teste 6'];
+  const [participants, setParticipants] = useState(['Leonardo']);
 
   // componente / interface são iguais
   // no return, sao inseridos os elementos que vao ser exibidos em tela
@@ -16,9 +17,12 @@ export default function Home(){
 
   // funcao para adicionar participantes
   function handleParticipantAdd(){
-    if(participants.includes("Leonardo")){
+    if(participants.includes("Teste")){
       return Alert.alert("Alerta", "Participante já informado!");
     }
+
+    setParticipants(prevState => [...prevState,'Carol'])
+
   }
 
   // funcao para remover participante
