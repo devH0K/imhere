@@ -9,7 +9,8 @@ import { Participant } from '../../components/Participant';
 // ao ser inicializada a aplicao, esta funcao é a primeira a ser chamada
 export default function Home(){
 
-  const [participants, setParticipants] = useState(['Leonardo']);
+  const [participants, setParticipants] = useState<string[]>([]);
+  const [participantName, setParticipantName] = useState('');
 
   // componente / interface são iguais
   // no return, sao inseridos os elementos que vao ser exibidos em tela
@@ -17,11 +18,12 @@ export default function Home(){
 
   // funcao para adicionar participantes
   function handleParticipantAdd(){
-    if(participants.includes("Teste")){
+    if(participants.includes(participantName)){
       return Alert.alert("Alerta", "Participante já informado!");
     }
 
-    setParticipants(prevState => [...prevState,'Carol'])
+    setParticipants(prevState => [...prevState, participantName]);
+    setParticipantName('');
 
   }
 
@@ -54,6 +56,8 @@ export default function Home(){
                 style={styles.input}
                 placeholder='Nome do participante'
                 placeholderTextColor="#6B6B6B"
+                onChangeText={setParticipantName}
+                value={participantName}
             />
 
             <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
