@@ -48,4 +48,18 @@ Vermelha = Erro que quebra a aplicação.
     Nome dos Hooks tem uma padronização
         useNomeDoHook
 
+- Imutabilidade
+    Duas maneiras de alterar dados:
+        A primeira é mutar o dado diretamente seu valor.
+        A segunda maneira é substituir o dado antigo por uma nova cópia com as alterações desejadas.
+
+    Detectar Mudanças
+        Detectar mudanças e objetos mutados é dificil, pois eles são modificados diretamente.
+        Essa detecção requer um objeto mutado para ser comparado com as cópias das suas
+            próprias versões e a árvore inteira do object para ser cruzada.
+
+    Benefício
+        Como os dados imutáveis podem determinar facilmente se ocorreram alterações, isso
+            também ajuda a determinar quando um componente deve ser rendenizado novamente.
+
 - 
