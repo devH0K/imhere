@@ -14,4 +14,23 @@ Vermelha = Erro que quebra a aplicação.
         Arquivos menores
         Padronização de projeto
 
+- ScroolView X FlatList
+
+    ScroolView
+
+        Carrega todos componentes / elementos da lista, mesmo não estando visíveis
+        Recomendada para listas pequenas, menus por exemplo
+
+        "Rendeniza todos os seus componentes filhos de reação de uma só vez, mas isso tem uma
+        desvantagem de desempenho."
+
+    FlatList
+
+        Carrega somente componentes / elementos exibidos em tela
+        Os demais, rendeniza quando for disponibilizado para visualização em tela
+        Recomendada para listas grandes
+
+        "Rendeniza itens lentamente, quando eles estão prestes a aparecer e remove itens que rolam
+        para fora da tela para economizar memória e tempo de processamento."
+
 - 
