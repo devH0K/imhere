@@ -33,4 +33,19 @@ Vermelha = Erro que quebra a aplicação.
         "Rendeniza itens lentamente, quando eles estão prestes a aparecer e remove itens que rolam
         para fora da tela para economizar memória e tempo de processamento."
 
+- Hooks
+
+    Permite que você use estados e outros recursos do React sem escrever uma classe.
+    Encapsula funcionalidades e facilita o reaproveitamento da sua lógica.
+
+    useState
+        criar e acessar estados
+    useEffect
+        dispara determinada lógica quando a interface for rendenizada
+        também pode ser vinculado a estados, para quando o estado vinculado ao useEffect
+            sofrer alteração, dispare a lógica que esta dentro do useEffect novamente
+
+    Nome dos Hooks tem uma padronização
+        useNomeDoHook
+
 - 
