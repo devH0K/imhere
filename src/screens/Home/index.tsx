@@ -1,5 +1,5 @@
 // importacao de elementos
-import { Text, View, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { styles } from './styles'
 
 import { Participant } from '../../components/Participant';
@@ -16,12 +16,23 @@ export default function Home(){
 
   // funcao para adicionar participantes
   function handleParticipantAdd(){
-    console.log("Você adicionou um participante!");
+    if(participants.includes("Leonardo")){
+      return Alert.alert("Alerta", "Participante já informado!");
+    }
   }
 
   // funcao para remover participante
   function handleParticipantRemove(name: string ){
-    console.log(`Você removeu o participante ${name}!`);
+    Alert.alert("Remover", `Remover o participante ${name}?`, [
+      {
+        text: 'Sim',
+        onPress: () => Alert.alert("Deletado!")
+      },
+      {
+        text: 'Não',
+        style: 'cancel'
+      }
+    ]);
   }
 
   return(
@@ -53,7 +64,7 @@ export default function Home(){
           <Participant
             key={item}
             name={item}
-            onRemove={() => handleParticipantRemove("Leonardo")}>
+            onRemove={() => handleParticipantRemove(item)}>
           </Participant>
         )}
         showsVerticalScrollIndicator={false}
