@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#131016',
+      //backgroundColor: '#49C6E5',
       padding: 24
     },
     eventName: {
@@ -34,6 +35,8 @@ export const styles = StyleSheet.create({
         width: 56,
         height: 56,
         borderRadius: 5,
+        borderWidth: 2,
+        borderColor: '#FFF',
         backgroundColor: "#31CF67",
         alignItems: 'center',
         justifyContent: 'center'

@@ -12,28 +12,33 @@ export default function Home(){
   const [participants, setParticipants] = useState<string[]>([]);
   const [participantName, setParticipantName] = useState('');
 
+  const date: Date = new Date(); // Obtem e inicializa variavel referente a Data
+
+  var day=date.getDate(); // Retorna o dia
+  var month=date.getMonth(); // Retorna o mês
+  var year=date.getFullYear(); // Retorna o ano
+
   // componente / interface são iguais
   // no return, sao inseridos os elementos que vao ser exibidos em tela
   // os componentes em JSX sempre iniciam com primeira letra maiuscula e extensao precisa ser formato .tsx
 
   // funcao para adicionar participantes
   function handleParticipantAdd(){
-    if(participants.includes(participantName)){
-      return Alert.alert("Alerta", "Participante já informado!");
+    // tentativa de validacao para campo nome participante, verificando se esta null ou undefined ou já foi informado
+    if(participants.includes(participantName) || !participantName.trim() || participantName.startsWith(' ') || !participantName.trim()){
+      Alert.alert("Alerta", "Participante já foi informado ou é inválido!");
+      setParticipantName('');
+    } else {
+      setParticipants(prevState => [...prevState, participantName]);
+      // limpa campo nome do participante
+      setParticipantName('');
     }
-
-    setParticipants(prevState => [...prevState, participantName]);
-    setParticipantName('');
-
   }
 
   // funcao para remover participante
   function handleParticipantRemove(name: string ){
 
-    participants;
-    setParticipants;
-
-    Alert.alert("Remover", `Remover o participante ${name}?`, [
+    Alert.alert("Alerta", `Você realmente deseja remover o participante ${name}?`, [
       {
         text: 'Sim',
         onPress: () => setParticipants(prevState => prevState.filter(participant => participant !== name))
@@ -53,7 +58,8 @@ export default function Home(){
         Nome do Evento</Text>
 
       <Text style={styles.eventDate}>
-        Domingo, 10 de Dezembro de 2023</Text>
+        Data do Evento: {day}/{month}/{year}
+      </Text>
 
         <View style={styles.form}>
             <TextInput
